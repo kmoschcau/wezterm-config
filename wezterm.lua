@@ -1,15 +1,15 @@
 local wezterm = require "wezterm"
-local windows = require "windows"
+local compat = require "system-compat"
 
 local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-local launch_menu = {}
-windows.add_vs_cmds(launch_menu)
+compat.set_default_prog(config)
 
-config.default_prog = { "pwsh", "-NoLogo" }
+local launch_menu = {}
+compat.add_vs_cmds(launch_menu)
 config.launch_menu = launch_menu
 
 return config

@@ -3,7 +3,7 @@ local wezterm = require "wezterm"
 local M = {}
 
 function M.add_vs_cmds(launch_menu)
-  if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  if M.is_on_windows() then
     table.insert(launch_menu, {
       label = "Powershell",
       args = { "pwsh", "-NoLogo" },
@@ -46,6 +46,19 @@ function M.add_vs_cmds(launch_menu)
         },
       })
     end
+  end
+end
+
+--- @return boolean
+function M.is_on_windows()
+  return wezterm.target_triple == "x86_64-pc-windows-msvc"
+end
+
+function M.set_default_prog(config)
+  if M.is_on_windows() then
+    config.default_prog = { "pwsh", "-NoLogo" }
+  else
+    config.default_prog = { "fish" }
   end
 end
 
