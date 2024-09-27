@@ -6,6 +6,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.font = wezterm.font "FiraMono Nerd Font"
+config.font_size = 10
+
 compat.set_default_prog(config)
 
 local launch_menu = {}
