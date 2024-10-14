@@ -1,11 +1,27 @@
 local wezterm = require "wezterm"
 local compat = require "system-compat"
 
+local function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return "Dark"
+end
+
+local function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return "Gruvbox Dark (Gogh)"
+  else
+    return "Gruvbox (Gogh)"
+  end
+end
+
 local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.color_scheme = scheme_for_appearance(get_appearance())
 config.font = wezterm.font "FiraMono Nerd Font"
 config.font_size = 10
 
