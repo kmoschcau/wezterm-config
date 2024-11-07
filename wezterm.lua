@@ -10,9 +10,9 @@ end
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
-    return "Gruvbox Dark (Gogh)"
+    return "Catppuccin Mocha"
   else
-    return "Gruvbox (Gogh)"
+    return "Catppuccin Latte"
   end
 end
 
