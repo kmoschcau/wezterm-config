@@ -24,6 +24,7 @@ end
 config.color_scheme = scheme_for_appearance(get_appearance())
 config.font = wezterm.font "FiraMono Nerd Font"
 config.font_size = 10
+config.underline_position = "210%"
 
 compat.set_default_prog(config)
 
