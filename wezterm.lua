@@ -22,7 +22,13 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
-config.font = wezterm.font "FiraMono Nerd Font"
+
+local base_font = "FiraMono Nerd Font"
+if compat.is_on_windows() then
+  config.font = wezterm.font_with_fallback { base_font, "Segoe UI Emoji" }
+else
+  config.font = wezterm.font(base_font)
+end
 config.font_size = 10
 config.underline_position = "210%"
 
