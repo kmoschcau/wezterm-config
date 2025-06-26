@@ -25,7 +25,11 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 local base_font = "FiraMono Nerd Font"
 if compat.is_on_windows() then
-  config.font = wezterm.font_with_fallback { base_font, "Segoe UI Emoji" }
+  config.font = wezterm.font_with_fallback {
+    base_font,
+    "Segoe UI Emoji",
+    { family = "Unifont Upper", scale = 2.0 },
+  }
 else
   config.font = wezterm.font(base_font)
 end
