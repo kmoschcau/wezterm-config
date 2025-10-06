@@ -1,0 +1,12 @@
+---
+version: "0.2"
+words:
+  - Catppuccin
+  - FiraMono
+  - Segoe
+  - Unifont
+  - Wezterm
+  - msvc
+  - pwsh
+  - vcvars
+  - wezterm

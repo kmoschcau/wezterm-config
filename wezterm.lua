@@ -1,4 +1,6 @@
+---@type Wezterm
 local wezterm = require "wezterm"
+
 local compat = require "system-compat"
 
 local function get_appearance()
@@ -16,6 +18,7 @@ local function scheme_for_appearance(appearance)
   end
 end
 
+---@type Config
 local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
