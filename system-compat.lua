@@ -3,6 +3,7 @@ local wezterm = require "wezterm"
 
 local M = {}
 
+---@param launch_menu SpawnCommand[]
 function M.add_vs_cmds(launch_menu)
   if M.is_on_windows() then
     table.insert(launch_menu, {
