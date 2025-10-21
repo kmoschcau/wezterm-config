@@ -96,6 +96,10 @@ end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
 
+if compat.is_on_windows() then
+  config.default_ssh_auth_sock = "\\\\.\\pipe\\openssh-ssh-agent"
+end
+
 local base_font = "FiraMono Nerd Font"
 if compat.is_on_windows() then
   config.font = wezterm.font_with_fallback {
