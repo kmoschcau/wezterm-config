@@ -113,19 +113,6 @@ end
 config.font_size = 10
 config.underline_position = "210%"
 
-compat.set_default_prog(config)
-
----@type SpawnCommand[]
-local launch_menu = {}
-compat.add_vs_cmds(launch_menu)
-
----@type SpawnCommand
-local nushell = {
-  label = "Nushell",
-  args = { "nu" },
-}
-table.insert(launch_menu, nushell)
-
-config.launch_menu = launch_menu
+require("launch-entries").add_launch_entries_and_default_program(config)
 
 return config
