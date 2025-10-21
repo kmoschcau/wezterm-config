@@ -63,13 +63,13 @@ function M.add_launch_entries_and_default_program(config)
       label = "Nushell",
       args = nu_args,
     })
+    config.default_prog = nu_args
 
     local fish_args = { "fish" }
     table.insert(config.launch_menu, {
       label = "fish",
       args = fish_args,
     })
-    config.default_prog = fish_args
   end
 end
 
